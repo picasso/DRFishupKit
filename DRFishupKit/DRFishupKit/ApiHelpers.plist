@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>my</key>
+	<dict>
+		<key>albums</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gallery.getMyGalleries</string>
+			<key>params</key>
+			<dict>
+				<key>orderby</key>
+				<string>dt_lastupdated desc</string>
+			</dict>
+		</dict>
+		<key>photosOfAlbum</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.getMyGObjectsByGalID</string>
+			<key>params</key>
+			<dict>
+				<key>galid</key>
+				<integer>0</integer>
+				<key>orderby</key>
+				<string>dt_lastupdated desc</string>
+				<key>metadata</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
+	<key>interesting</key>
+	<dict>
+		<key>method</key>
+		<string>galleries.gobject.select</string>
+		<key>params</key>
+		<dict>
+			<key>term</key>
+			<string>is_interesting:1</string>
+			<key>orderby</key>
+			<string>dt_created desc</string>
+			<key>extras</key>
+			<string>preview_file</string>
+		</dict>
+	</dict>
+	<key>top</key>
+	<dict>
+		<key>week</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>dt_created:lastweek rate:&gt;0</string>
+				<key>orderby</key>
+				<string>rank desc,dt_created desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+		<key>month</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>dt_created:lastmonth rate:&gt;0</string>
+				<key>orderby</key>
+				<string>rank desc,dt_created desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+		<key>year</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>dt_created:lastyear rate:&gt;0</string>
+				<key>orderby</key>
+				<string>rank desc,dt_created desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>commented</key>
+	<dict>
+		<key>week</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>cperiod:lastweek</string>
+				<key>orderby</key>
+				<string>cperiod_comment_cnt desc,dt_lastcomment desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+		<key>month</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>cperiod:lastmonth</string>
+				<key>orderby</key>
+				<string>cperiod_comment_cnt desc,dt_lastcomment desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+		<key>year</key>
+		<dict>
+			<key>method</key>
+			<string>galleries.gobject.select</string>
+			<key>params</key>
+			<dict>
+				<key>term</key>
+				<string>cperiod:lastyear</string>
+				<key>orderby</key>
+				<string>cperiod_comment_cnt desc,dt_lastcomment desc</string>
+				<key>extras</key>
+				<string>preview_file</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>user</key>
+	<dict>
+		<key>public</key>
+		<dict>
+			<key>method</key>
+			<string>accounts.user.getPublicData</string>
+			<key>params</key>
+			<dict>
+				<key>columns</key>
+				<string>base_hostname,biography,city,first_name,last_name, login,original_photo_id, avatar_file</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>upload</key>
+	<dict>
+		<key>method</key>
+		<string>misc.file.prepareUpload</string>
+		<key>params</key>
+		<dict>
+			<key>file_name</key>
+			<string></string>
+			<key>file_size</key>
+			<string></string>
+			<key>chunk_quantity</key>
+			<string>1</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

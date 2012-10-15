@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'DRFishupKit' target in the 'DRFishupKit' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "MKNetworkKit.h"
+    #import "DRFishupKit.h"
+#endif
