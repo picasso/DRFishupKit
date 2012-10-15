@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80031651162CC3DA00E028FC /* DRFishupKit.pages in Resources */ = {isa = PBXBuildFile; fileRef = 80031650162CC3DA00E028FC /* DRFishupKit.pages */; };
 		80172C26162CBB2800678337 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 80172C25162CBB2800678337 /* Credits.rtf */; };
 		808964551624238E0055572E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808964541624238E0055572E /* Cocoa.framework */; };
 		8089645F1624238E0055572E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8089645D1624238E0055572E /* InfoPlist.strings */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80031650162CC3DA00E028FC /* DRFishupKit.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = DRFishupKit.pages; path = ../../DRFishupKit.pages; sourceTree = "<group>"; };
 		80172C25162CBB2800678337 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		808964511624238E0055572E /* DRFishupKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DRFishupKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808964541624238E0055572E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				80ABE393162C999E00C69B70 /* README.md */,
+				80031650162CC3DA00E028FC /* DRFishupKit.pages */,
 				808964CD162442DD0055572E /* MKNetworkKit */,
 				808964611624238E0055572E /* DRFishupKit.h */,
 				8089646C16242D0C0055572E /* DRFishupEngine.h */,
@@ -294,6 +297,7 @@
 				808965081624B6690055572E /* ApiHelpers.plist in Resources */,
 				80ABE394162C999E00C69B70 /* README.md in Resources */,
 				80172C26162CBB2800678337 /* Credits.rtf in Resources */,
+				80031651162CC3DA00E028FC /* DRFishupKit.pages in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
