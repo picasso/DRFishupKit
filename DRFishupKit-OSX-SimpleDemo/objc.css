@@ -1,0 +1,23 @@
+div.objc {margin:20px;padding:10px;background:#fff;border:1px solid #d9ebf6;}
+p.p1 {margin: 0; font: 12px Helvetica}
+p.p2 {margin: 0; font: 12px Helvetica; min-height: 14px}
+p.p3 {margin: 0; font: 12px Menlo; color: #578085}
+p.p4 {margin: 0; font: 12px Menlo; min-height: 10}
+p.p5 {margin: 0; font: 12px Menlo}
+p.p6 {margin: 0; font: 12px Menlo; color: #1d8917}
+p.p7 {margin: 0; font: 12px Menlo; color: #43007e}
+p.p8 {margin: 0; font: 12px Menlo; color: #c5232c}
+p.p9 {margin: 0; font: 12px Menlo; color: #3a595d}
+p.p10 {margin: 0; font: 12px Menlo; color: #734a31}
+span.s1 {letter-spacing: 0}
+span.s2 {font: 11px Menlo; letter-spacing: 0; color: #78009b}
+span.s3 {letter-spacing: 0; color: #b3009f}
+span.s4 {letter-spacing: 0; color: #000000}
+span.s5 {letter-spacing: 0; color: #43007e}
+span.s6 {letter-spacing: 0; color: #578085}
+span.s7 {letter-spacing: 0; color: #3a595d}
+span.s8 {letter-spacing: 0; color: #7124a5}
+span.s9 {letter-spacing: 0; color: #4200d3}
+span.s10 {font: 11px Menlo; letter-spacing: 0; color: #578085}
+span.s11 {letter-spacing: 0; color: #734a31}
+span.s12 {letter-spacing: 0; color: #c5232c}
