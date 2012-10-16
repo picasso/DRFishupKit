@@ -12,6 +12,7 @@
 		8057BFD1162AFD8A00BBB200 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8057BFD0162AFD8A00BBB200 /* Security.framework */; };
 		8057BFD3162AFDC600BBB200 /* DRFishupKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8057BFD2162AFDC600BBB200 /* DRFishupKit.framework */; };
 		8057BFD5162B560C00BBB200 /* Fishup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8057BFD4162B560C00BBB200 /* Fishup.icns */; };
+		80BADCE0162D52A900FE808E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80BADCDF162D52A900FE808E /* README.md */; };
 		80CF97F1162AC6CB00AB668E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CF97F0162AC6CB00AB668E /* Cocoa.framework */; };
 		80CF97FB162AC6CB00AB668E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80CF97F9162AC6CB00AB668E /* InfoPlist.strings */; };
 		80CF97FD162AC6CB00AB668E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CF97FC162AC6CB00AB668E /* main.m */; };
@@ -26,6 +27,7 @@
 		8057BFD0162AFD8A00BBB200 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8057BFD2162AFDC600BBB200 /* DRFishupKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DRFishupKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/DRFishupKit-grpfupocipqssmgnmcyxugieunua/Build/Products/Debug/DRFishupKit.framework"; sourceTree = "<group>"; };
 		8057BFD4162B560C00BBB200 /* Fishup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Fishup.icns; path = ../Fishup.icns; sourceTree = "<group>"; };
+		80BADCDF162D52A900FE808E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		80CF97EC162AC6CB00AB668E /* DRFishupKit-OSX-SimpleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DRFishupKit-OSX-SimpleDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CF97F0162AC6CB00AB668E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80CF97F3162AC6CB00AB668E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +102,7 @@
 		80CF97F6162AC6CB00AB668E /* DRFishupKit-OSX-SimpleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				80BADCDF162D52A900FE808E /* README.md */,
 				80CF9802162AC6CB00AB668E /* DRXSDAppDelegate.h */,
 				80CF9803162AC6CB00AB668E /* DRXSDAppDelegate.m */,
 				80CF9805162AC6CC00AB668E /* MainMenu.xib */,
@@ -177,6 +180,7 @@
 				80CF9801162AC6CB00AB668E /* Credits.rtf in Resources */,
 				80CF9807162AC6CC00AB668E /* MainMenu.xib in Resources */,
 				8057BFD5162B560C00BBB200 /* Fishup.icns in Resources */,
+				80BADCE0162D52A900FE808E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
