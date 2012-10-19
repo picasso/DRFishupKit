@@ -131,8 +131,10 @@
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate: loopUntil]; //[NSDate distantFuture]];
         }
         
-        if(self.waitingForToken == 1)
-            {DLog(@"The server took longer than %d sec to provide data [timeout].", abs([loopStarted timeIntervalSinceNow]));}
+        if(self.waitingForToken == 1) {
+            loopUntil = loopStarted;
+            DLog(@"The server took longer than %d sec to provide data [timeout].", abs([loopUntil timeIntervalSinceNow]));
+        }
     }
     return ([self.token length] == 0) ? NO :YES;
 }
