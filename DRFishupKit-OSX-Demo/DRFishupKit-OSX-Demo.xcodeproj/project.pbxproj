@@ -14,6 +14,7 @@
 		805FA523162D6C43006E09F5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 805FA521162D6C43006E09F5 /* Credits.rtf */; };
 		805FA526162D6C43006E09F5 /* DRXDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805FA525162D6C43006E09F5 /* DRXDAppDelegate.m */; };
 		805FA529162D6C43006E09F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805FA527162D6C43006E09F5 /* MainMenu.xib */; };
+		809F1BE51631C5E700DA54EA /* DRFishupKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC3393162D9F0900837F79 /* DRFishupKit.framework */; };
 		80A73D6A1631976000FF6DC5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80A73D691631976000FF6DC5 /* README.md */; };
 		80B44E51162D90BC003BFF85 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B44E50162D90BC003BFF85 /* Quartz.framework */; };
 		80B44E55162D9490003BFF85 /* DRXDImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B44E54162D9490003BFF85 /* DRXDImageCell.m */; };
@@ -22,6 +23,20 @@
 		80FC3392162D9F0300837F79 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC3391162D9F0300837F79 /* Security.framework */; };
 		80FC3394162D9F0900837F79 /* DRFishupKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC3393162D9F0900837F79 /* DRFishupKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		809F1BC91631C3F100DA54EA /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				809F1BE51631C5E700DA54EA /* DRFishupKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8026C244163038FA00104E31 /* Fishup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Fishup.icns; sourceTree = "<group>"; };
@@ -143,6 +158,7 @@
 				805FA50A162D6C43006E09F5 /* Sources */,
 				805FA50B162D6C43006E09F5 /* Frameworks */,
 				805FA50C162D6C43006E09F5 /* Resources */,
+				809F1BC91631C3F100DA54EA /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
