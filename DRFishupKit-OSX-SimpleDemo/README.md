@@ -1,4 +1,4 @@
-#Простые примеры DRFishupKit для Mac OSX
+#Простой пример DRFishupKit для Mac OSX
 
 Подробнее о DRFishupKit читайте в файле [DRFishupKit.pages](https://github.com/picasso/DRFishupKit/blob/master/DRFishupKit.pages).
 

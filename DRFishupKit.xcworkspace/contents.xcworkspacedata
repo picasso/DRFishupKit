@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:DRFishupKit-OSX-Demo/DRFishupKit-OSX-Demo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DRFishupKit-OSX-SimpleDemo/DRFishupKit-OSX-SimpleDemo.xcodeproj">
    </FileRef>
    <FileRef
