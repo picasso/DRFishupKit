@@ -9,6 +9,7 @@
 @interface DRFishupAPIHelper : NSObject
 
 - (void) extendParams:(DRParamBlock)block;
+- (NSMutableDictionary *) paramsForKey:(NSString *)key;
 
 - (NSString *) stringFromAPI:(NSString *)api method:(NSString *)method;
 

@@ -80,7 +80,8 @@
 
 - (NSMutableDictionary *) paramsForKey:(NSString *)key
 {
-    return [[[self apiForKey:key] valueForKeyPath:@"params"] mutableCopy];
+    NSMutableDictionary *apiParams = [[[self apiForKey:key] valueForKeyPath:@"params"] mutableCopy];
+    return apiParams ? apiParams : [NSMutableDictionary dictionary];
 }
 
 #pragma mark - API Helpers methods for GET requests
@@ -96,7 +97,6 @@
         apiString = api;
     }
 
-    if(apiParams == nil) apiParams = [NSMutableDictionary dictionary];
     [apiParams addEntriesFromDictionary:params];
     apiString = [self stringForAPI:[apiString componentsSeparatedByString:@"."] params:apiParams];
     

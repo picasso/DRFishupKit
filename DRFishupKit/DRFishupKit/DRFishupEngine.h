@@ -39,8 +39,10 @@
 - (void) addUploads:(NSArray *)files;
 - (void) uploadToGallery:(NSString *)galleryId onCompletion:(DRArrayBlock)dataBlock;
 
-
-
+- (void) sendAPI:(NSString *)api withId:(NSString *)stringId onCompletion:(DRDataBlock)dataBlock;
+- (void) sendAPI:(NSString *)api withExtras:(NSString *)extras onCompletion:(DRDataBlock)dataBlock;
+- (void) sendAPI:(NSString *)api withColumns:(NSString *)columns onCompletion:(DRDataBlock)dataBlock;
+- (void) sendAPI:(NSString *)api withTerm:(NSString *)term onCompletion:(DRDataBlock)dataBlock;
 
 - (void) userPublicData:(NSString *)userId onCompletion:(DRDataBlock)dataBlock;
 

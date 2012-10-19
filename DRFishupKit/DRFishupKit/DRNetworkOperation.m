@@ -261,43 +261,13 @@
         
         if(data != nil) {
             
-            BOOL isImageIncluded = NO;
             NSMutableDictionary *structData = [data mutableCopy];
             
-            for(NSString *key in data)
+            for(NSString *key in data) 
             {
                 id value = [data valueForKey:key];
-                NSMutableArray *thumbs = [[key componentsSeparatedByString:@"_"] mutableCopy];
-                
-                if([thumbs count] > 1 && [thumbs containsObject:@"file"]) {
-                    
-                    if(isImageIncluded == NO) {
-                        isImageIncluded = YES;
-                        [structData setValue:[NSMutableDictionary dictionary] forKey:@"photo"];
-                    }
-                    
-                    [thumbs removeLastObject];
-                    NSString *thumb = [thumbs componentsJoinedByString:@""];
-                    NSArray *info = [self arrayFromString:value];
-                    NSMutableDictionary *image = [NSMutableDictionary dictionary];
-                    
-                    if([[info objectAtIndex:0] length])
-                        [image setValue:[kDRFishupImageHost stringByAppendingString:[info objectAtIndex:0]] forKey:@"url"];
-                    else
-                         [image setValue:[info objectAtIndex:0] forKey:@"url"];
- 
-                    [image setValue:[info objectAtIndex:2] forKey:@"width"];
-                    [image setValue:[info objectAtIndex:3] forKey:@"height"];
-                    [image setValue:[NSNumber numberWithDouble:[[info objectAtIndex:4] doubleValue]/1024] forKey:@"size"];
-                    [image setValue:[info objectAtIndex:5] forKey:@"name"];
-                    
-                    [structData removeObjectForKey:key];
-                    [structData setValue:image forKeyPath:[@"photo." stringByAppendingString:thumb]];
-                } else {
-                    
-                    [structData removeObjectForKey:key];
-                    [structData setValue:value forKey:[key lowercaseString]];
-                }
+                [structData removeObjectForKey:key];
+                [self photoString:key forObject:value addTo:structData];
             }
             processedData = structData;
         }
@@ -308,14 +278,6 @@
     @finally {
         return processedData;
     }
-}
-
-- (NSArray *) arrayFromString:(NSString *)string
-{
-    NSArray *empty = [NSArray arrayWithObjects:@"", @"", @"0", @"0", @"0", @"", nil];
-    NSArray *data = [string componentsSeparatedByString:@"|"];
-    
-    return ([string length] && [data count] >= 6) ? data : empty;
 }
 
 - (id) responseQuery:(NSDictionary *)jsonData
@@ -338,45 +300,17 @@
         
         for(NSInteger i=0; i < recordCount; i++) {
             
-            BOOL isImageIncluded = NO;
             NSMutableDictionary *item = [NSMutableDictionary dictionary];
             for(NSString *column in columns)
             {
                 NSString *key = [column lowercaseString];
                 id value = [[data valueForKey:column] objectAtIndex:i];
-                
-                if([key isEqualToString:@"id"]) value = [value stringValue];
-                
-                NSMutableArray *thumbs = [[key componentsSeparatedByString:@"_"] mutableCopy];
-                if([thumbs count] > 1 && [thumbs containsObject:@"file"]) {
-                    
-                    if(isImageIncluded == NO) {
-                        isImageIncluded = YES;
-                        [item setValue:[NSMutableDictionary dictionary] forKey:@"photo"];
-                    }
-                    
-                    [thumbs removeLastObject];
-                    NSString *thumb = [thumbs componentsJoinedByString:@""];
-                    NSArray *info = [value componentsSeparatedByString:@"|"];
-                    NSMutableDictionary *image = [NSMutableDictionary dictionary];
-                    
-                    [image setValue:[kDRFishupImageHost stringByAppendingString:[info objectAtIndex:0]] forKey:@"url"];
-                    [image setValue:[info objectAtIndex:2] forKey:@"width"];
-                    [image setValue:[info objectAtIndex:3] forKey:@"height"];
-                    [image setValue:[NSNumber numberWithDouble:[[info objectAtIndex:4] doubleValue]/1024] forKey:@"size"];
-                    [image setValue:[info objectAtIndex:5] forKey:@"name"];
-                    
-                    
-                    value = image;
-                    key = [@"photo." stringByAppendingString:thumb];
-                }
-                [item setValue:value forKeyPath:key];
+                [self photoString:key forObject:value addTo:item];
             }
             [query addObject:item];
         }
         processedData = query;
     }
-    
     @catch (NSException *e) {
         DLog(@"%@: %@", e.name, e.reason);
     }
@@ -385,4 +319,61 @@
     }
 }
 
+- (NSString *) photoString:(NSString *)key forObject:(id)value addTo:(NSMutableDictionary *)item
+{
+    NSMutableDictionary *photo = nil;
+    NSMutableArray *thumbs = [[key componentsSeparatedByString:@"_"] mutableCopy];
+    
+    if([thumbs count] > 1 && ([thumbs containsObject:@"file"] || ([thumbs containsObject:@"photo"] && [thumbs containsObject:@"id"]))) {
+        
+        if([item objectForKey:@"photo"] == nil) {
+            [item setValue:[NSMutableDictionary dictionary] forKey:@"photo"];
+        }
+        
+        [thumbs removeLastObject];
+        photo = [NSMutableDictionary dictionary];
+        NSString *thumb = [thumbs componentsJoinedByString:@""];
+        NSArray *info = [self arrayFromPhotoString:value];
+        
+        if([[info objectAtIndex:0] length])
+            [photo setValue:[kDRFishupImageHost stringByAppendingString:[info objectAtIndex:0]] forKey:@"url"];
+        else
+            [photo setValue:[info objectAtIndex:0] forKey:@"url"];
+        
+        [photo setValue:[info objectAtIndex:2] forKey:@"width"];
+        [photo setValue:[info objectAtIndex:3] forKey:@"height"];
+        [photo setValue:[NSNumber numberWithDouble:[[info objectAtIndex:4] doubleValue]/1024] forKey:@"size"];
+        [photo setValue:[info objectAtIndex:5] forKey:@"name"];
+        
+        value = photo;
+        key = [@"photo." stringByAppendingString:thumb];
+    }
+
+    [item setValue:value forKeyPath:[key lowercaseString]];
+    return key;
+}
+
+- (NSArray *) arrayFromPhotoString:(NSString *)string
+{
+    NSArray *empty = [NSArray arrayWithObjects:@"", @"", @"0", @"0", @"0", @"", nil];
+    NSArray *data = [string componentsSeparatedByString:@"|"];
+    
+    return ([string length] && [data count] >= 6) ? data : empty;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

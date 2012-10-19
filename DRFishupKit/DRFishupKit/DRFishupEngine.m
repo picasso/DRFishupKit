@@ -428,21 +428,38 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #pragma mark - Convenience API Methods
+
+- (void) sendAPI:(NSString *)api withId:(NSString *)stringId onCompletion:(DRDataBlock)dataBlock
+{
+    [self sendAPI:api withParams:[NSDictionary dictionaryWithObject:stringId forKey:@"id"] onCompletion:dataBlock];
+}
+
+- (void) sendAPI:(NSString *)api withExtras:(NSString *)extras onCompletion:(DRDataBlock)dataBlock
+{
+    [self sendAPI:api withParams:[NSDictionary dictionaryWithObject:extras forKey:@"extras"] onCompletion:dataBlock];
+}
+
+- (void) sendAPI:(NSString *)api withColumns:(NSString *)columns onCompletion:(DRDataBlock)dataBlock
+{
+    [self sendAPI:api withParams:[NSDictionary dictionaryWithObject:columns forKey:@"columns"] onCompletion:dataBlock];
+}
+
+- (void) sendAPI:(NSString *)api withTerm:(NSString *)term onCompletion:(DRDataBlock)dataBlock
+{
+    NSMutableDictionary *params = [self.helper paramsForKey:api];
+    NSString *termString = [params objectForKey:@"term"];
+    
+    if(term && [term length]) {
+        
+        if(termString) termString = [NSString stringWithFormat:@"%@ %@", termString, term];
+        else termString = term;
+        
+        [params setObject:termString forKey:@"term"];
+    }
+    [self sendAPI:api withParams:params onCompletion:dataBlock];
+}
+
 
 - (void) userPublicData:(NSString *)userId onCompletion:(DRDataBlock)dataBlock
 {
