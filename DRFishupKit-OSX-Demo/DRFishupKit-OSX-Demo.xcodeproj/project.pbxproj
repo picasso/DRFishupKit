@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8026C245163038FA00104E31 /* Fishup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8026C244163038FA00104E31 /* Fishup.icns */; };
+		805FA513162D6C43006E09F5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805FA512162D6C43006E09F5 /* Cocoa.framework */; };
+		805FA51D162D6C43006E09F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 805FA51B162D6C43006E09F5 /* InfoPlist.strings */; };
+		805FA51F162D6C43006E09F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805FA51E162D6C43006E09F5 /* main.m */; };
+		805FA523162D6C43006E09F5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 805FA521162D6C43006E09F5 /* Credits.rtf */; };
+		805FA526162D6C43006E09F5 /* DRXDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805FA525162D6C43006E09F5 /* DRXDAppDelegate.m */; };
+		805FA529162D6C43006E09F5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805FA527162D6C43006E09F5 /* MainMenu.xib */; };
+		80A73D6A1631976000FF6DC5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80A73D691631976000FF6DC5 /* README.md */; };
+		80B44E51162D90BC003BFF85 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B44E50162D90BC003BFF85 /* Quartz.framework */; };
+		80B44E55162D9490003BFF85 /* DRXDImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B44E54162D9490003BFF85 /* DRXDImageCell.m */; };
+		80FC338D162D9EF200837F79 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC338C162D9EF200837F79 /* CFNetwork.framework */; };
+		80FC3390162D9EF900837F79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC338F162D9EF900837F79 /* SystemConfiguration.framework */; };
+		80FC3392162D9F0300837F79 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC3391162D9F0300837F79 /* Security.framework */; };
+		80FC3394162D9F0900837F79 /* DRFishupKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FC3393162D9F0900837F79 /* DRFishupKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8026C244163038FA00104E31 /* Fishup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Fishup.icns; sourceTree = "<group>"; };
+		805FA50E162D6C43006E09F5 /* DRFishupKit-OSX-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DRFishupKit-OSX-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		805FA512162D6C43006E09F5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		805FA515162D6C43006E09F5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		805FA516162D6C43006E09F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		805FA517162D6C43006E09F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		805FA51A162D6C43006E09F5 /* DRFishupKit-OSX-Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DRFishupKit-OSX-Demo-Info.plist"; sourceTree = "<group>"; };
+		805FA51C162D6C43006E09F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		805FA51E162D6C43006E09F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		805FA520162D6C43006E09F5 /* DRFishupKit-OSX-Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DRFishupKit-OSX-Demo-Prefix.pch"; sourceTree = "<group>"; };
+		805FA522162D6C43006E09F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		805FA524162D6C43006E09F5 /* DRXDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRXDAppDelegate.h; sourceTree = "<group>"; };
+		805FA525162D6C43006E09F5 /* DRXDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRXDAppDelegate.m; sourceTree = "<group>"; };
+		805FA528162D6C43006E09F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		80A73D691631976000FF6DC5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		80B44E50162D90BC003BFF85 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		80B44E53162D9490003BFF85 /* DRXDImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRXDImageCell.h; sourceTree = "<group>"; };
+		80B44E54162D9490003BFF85 /* DRXDImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRXDImageCell.m; sourceTree = "<group>"; };
+		80FC338C162D9EF200837F79 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		80FC338F162D9EF900837F79 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		80FC3391162D9F0300837F79 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		80FC3393162D9F0900837F79 /* DRFishupKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DRFishupKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/DRFishupKit-MY-efberpxdqnuxaoffighmevyndarb/Build/Products/Debug/DRFishupKit.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		805FA50B162D6C43006E09F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80FC3394162D9F0900837F79 /* DRFishupKit.framework in Frameworks */,
+				80FC3392162D9F0300837F79 /* Security.framework in Frameworks */,
+				80FC3390162D9EF900837F79 /* SystemConfiguration.framework in Frameworks */,
+				80FC338D162D9EF200837F79 /* CFNetwork.framework in Frameworks */,
+				80B44E51162D90BC003BFF85 /* Quartz.framework in Frameworks */,
+				805FA513162D6C43006E09F5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		805FA503162D6C43006E09F5 = {
+			isa = PBXGroup;
+			children = (
+				80A73D691631976000FF6DC5 /* README.md */,
+				805FA518162D6C43006E09F5 /* DRFishupKit-OSX-Demo */,
+				805FA511162D6C43006E09F5 /* Frameworks */,
+				805FA50F162D6C43006E09F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		805FA50F162D6C43006E09F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				805FA50E162D6C43006E09F5 /* DRFishupKit-OSX-Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		805FA511162D6C43006E09F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80FC3393162D9F0900837F79 /* DRFishupKit.framework */,
+				80FC3391162D9F0300837F79 /* Security.framework */,
+				80FC338F162D9EF900837F79 /* SystemConfiguration.framework */,
+				80FC338C162D9EF200837F79 /* CFNetwork.framework */,
+				80B44E50162D90BC003BFF85 /* Quartz.framework */,
+				805FA512162D6C43006E09F5 /* Cocoa.framework */,
+				805FA514162D6C43006E09F5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		805FA514162D6C43006E09F5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				805FA515162D6C43006E09F5 /* AppKit.framework */,
+				805FA516162D6C43006E09F5 /* CoreData.framework */,
+				805FA517162D6C43006E09F5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		805FA518162D6C43006E09F5 /* DRFishupKit-OSX-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				805FA524162D6C43006E09F5 /* DRXDAppDelegate.h */,
+				805FA525162D6C43006E09F5 /* DRXDAppDelegate.m */,
+				80B44E53162D9490003BFF85 /* DRXDImageCell.h */,
+				80B44E54162D9490003BFF85 /* DRXDImageCell.m */,
+				805FA527162D6C43006E09F5 /* MainMenu.xib */,
+				805FA519162D6C43006E09F5 /* Supporting Files */,
+			);
+			path = "DRFishupKit-OSX-Demo";
+			sourceTree = "<group>";
+		};
+		805FA519162D6C43006E09F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8026C244163038FA00104E31 /* Fishup.icns */,
+				805FA51A162D6C43006E09F5 /* DRFishupKit-OSX-Demo-Info.plist */,
+				805FA51B162D6C43006E09F5 /* InfoPlist.strings */,
+				805FA51E162D6C43006E09F5 /* main.m */,
+				805FA520162D6C43006E09F5 /* DRFishupKit-OSX-Demo-Prefix.pch */,
+				805FA521162D6C43006E09F5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		805FA50D162D6C43006E09F5 /* DRFishupKit-OSX-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805FA52C162D6C43006E09F5 /* Build configuration list for PBXNativeTarget "DRFishupKit-OSX-Demo" */;
+			buildPhases = (
+				805FA50A162D6C43006E09F5 /* Sources */,
+				805FA50B162D6C43006E09F5 /* Frameworks */,
+				805FA50C162D6C43006E09F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DRFishupKit-OSX-Demo";
+			productName = "DRFishupKit-OSX-Demo";
+			productReference = 805FA50E162D6C43006E09F5 /* DRFishupKit-OSX-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		805FA505162D6C43006E09F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DRXD;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Dmitry Rudakov";
+			};
+			buildConfigurationList = 805FA508162D6C43006E09F5 /* Build configuration list for PBXProject "DRFishupKit-OSX-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 805FA503162D6C43006E09F5;
+			productRefGroup = 805FA50F162D6C43006E09F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				805FA50D162D6C43006E09F5 /* DRFishupKit-OSX-Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		805FA50C162D6C43006E09F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805FA51D162D6C43006E09F5 /* InfoPlist.strings in Resources */,
+				805FA523162D6C43006E09F5 /* Credits.rtf in Resources */,
+				805FA529162D6C43006E09F5 /* MainMenu.xib in Resources */,
+				8026C245163038FA00104E31 /* Fishup.icns in Resources */,
+				80A73D6A1631976000FF6DC5 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		805FA50A162D6C43006E09F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805FA51F162D6C43006E09F5 /* main.m in Sources */,
+				805FA526162D6C43006E09F5 /* DRXDAppDelegate.m in Sources */,
+				80B44E55162D9490003BFF85 /* DRXDImageCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		805FA51B162D6C43006E09F5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805FA51C162D6C43006E09F5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		805FA521162D6C43006E09F5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805FA522162D6C43006E09F5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		805FA527162D6C43006E09F5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805FA528162D6C43006E09F5 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		805FA52A162D6C43006E09F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		805FA52B162D6C43006E09F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		805FA52D162D6C43006E09F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/DRFishupKit-MY-efberpxdqnuxaoffighmevyndarb/Build/Products/Debug\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DRFishupKit-OSX-Demo/DRFishupKit-OSX-Demo-Prefix.pch";
+				INFOPLIST_FILE = "DRFishupKit-OSX-Demo/DRFishupKit-OSX-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		805FA52E162D6C43006E09F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/DRFishupKit-MY-efberpxdqnuxaoffighmevyndarb/Build/Products/Debug\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DRFishupKit-OSX-Demo/DRFishupKit-OSX-Demo-Prefix.pch";
+				INFOPLIST_FILE = "DRFishupKit-OSX-Demo/DRFishupKit-OSX-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		805FA508162D6C43006E09F5 /* Build configuration list for PBXProject "DRFishupKit-OSX-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805FA52A162D6C43006E09F5 /* Debug */,
+				805FA52B162D6C43006E09F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		805FA52C162D6C43006E09F5 /* Build configuration list for PBXNativeTarget "DRFishupKit-OSX-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805FA52D162D6C43006E09F5 /* Debug */,
+				805FA52E162D6C43006E09F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 805FA505162D6C43006E09F5 /* Project object */;
+}
