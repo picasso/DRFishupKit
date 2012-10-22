@@ -16,6 +16,9 @@
 #define kDurationOfShake        0.5f
 #define kVigourOfShake          0.05f
 
+#define kMyFishupKey            @"Мой Фишап"
+#define kSonyAlpha900           @"1194"     // 1194 - id of camera Sony DSLR-900 on Fishup
+
 @interface DRXDAppDelegate ()
 
 // data for NSOutline ----------------------------------
@@ -33,8 +36,9 @@
 
 // Animations & Effects  -------------------------------
 @property (strong) NSView *blackoutView;
-@property (assign) int blackoutCount;
-@property (assign) BOOL isWaitingBlackout;
+@property (assign) BOOL insideBlackout;
+@property (assign) BOOL waitingBlackout;
+@property (assign) BOOL forceBlackout;
 
  // Fishup API instance --------------------------------
 @property (strong) DRFishupEngine *engine;
@@ -44,7 +48,7 @@
 @implementation DRXDAppDelegate
 @synthesize outlineData = _outlineData, outline = _outline, publicOutline = _publicOutline, myOutline = _myOutline;
 @synthesize photos = _photos, photoKey = _photoKey, titleKey = _titleKey, authorKey = _authorKey, idKey = _idKey;
-@synthesize blackoutView = _blackoutView, blackoutCount = _blackoutCount, isWaitingBlackout = _isWaitingBlackout;
+@synthesize blackoutView = _blackoutView, insideBlackout = _insideBlackout, waitingBlackout = _waitingBlackout, forceBlackout = _forceBlackout;
 @synthesize engine = _engine;
 
 @synthesize browser = _browser, placeholder = _placeholder, loginPanel = _loginPanel, selectedGallery = _selectedGallery;
@@ -60,19 +64,19 @@
 {
     self.publicOutline = @{
     
-    @"fishup" :    @[
+    @"Фишап" :    @[
     @{ @"name" :@"Популярные", @"selector" :@"popular"},
     @{ @"name" :@"Интересные", @"selector" :@"interesting"},
     @{ @"name" :@"Обсуждаемые", @"selector" :@"commented"},
     @{ @"name" :@"", @"selector" : @""} // empty selector
     ],
     
-    @"my fishup" : @[
+    kMyFishupKey : @[
     @{ @"name" :@"Войти в аккаунт", @"selector" :@"mylogin"},
     @{ @"name" :@"", @"selector" : @""}
     ],
     
-    @"favorities" : @[
+    @"Избранное" : @[
     @{ @"name" :@"Новые снимки за последний день", @"selector" :@"newday"},
     @{ @"name" :@"Снимки по тэгу Iceland", @"selector" :@"iceland"},
     @{ @"name" :@"Снимки содержащие Sunrise", @"selector" :@"sunrise"},
@@ -140,28 +144,21 @@
     [NSAnimationContext endGrouping];
 }
 
-
 #pragma mark - Login Panel methods
-
-- (BOOL) isNotAuthorized
-{
-    if([self.engine.token length]) return NO;
-    
-    return YES;
-}
 
 - (void)mylogin
 {
     [self.outline deselectAll:self];
-    [self startBlackout];
+    [self instantBlackout];
     [NSApp beginSheet:self.loginPanel modalForWindow:self.window  modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 - (void)mylogout
 {
     [self.engine logout];
-    [self.outlineData setObject:[self.publicOutline objectForKey:@"my fishup"] forKey:@"my fishup"];
+    [self.outlineData setObject:[self.publicOutline objectForKey:kMyFishupKey] forKey:kMyFishupKey];
     [self updateOutline];
+    [self updateWith:[NSArray array]];
 }
 
 - (IBAction) loginCancel:(id)sender
@@ -178,7 +175,7 @@
     NSString *pass = [self.passwordField stringValue];
     
     if([self.engine login:login password:pass andWait:YES]) {
-        [self.outlineData setObject:self.myOutline forKey:@"my fishup"];
+        [self.outlineData setObject:self.myOutline forKey:kMyFishupKey];
         [self updateOutline];
         [self loginCancel:self];
     }
@@ -237,10 +234,10 @@
     }];
 }
 
-- (void) sonyalpha  // 1194 - id of camera Sony DSLR-900 on Fishup
+- (void) sonyalpha  
 {
     [self startBlackout];
-    [self.engine sendAPI:@"search.camera" withTerm:@"1194" onCompletion:^(NSArray *data) {
+    [self.engine sendAPI:@"search.camera" withTerm:kSonyAlpha900 onCompletion:^(NSArray *data) {
         
         [self stopBlackout];
         [self updateWith:data];
@@ -313,9 +310,9 @@
 
 #pragma mark - Upload Files to Fishup
 
-- (IBAction)myupload
+- (void) myupload
 {
-    [self startBlackout];
+    [self instantBlackout];
     [self.engine sendAPI:@"my.albums" onCompletion:^(NSArray *data) {
         
         [self selectGallery:data];
@@ -366,10 +363,16 @@
         [self.uploadProgress setDoubleValue:progress];
     }];
     
+    [self.uploadProgress setDoubleValue:0.0f];
+    [self.uploadProgress setHidden:NO];
+
     [self.engine uploadToGallery:self.selectedGallery onCompletion:^(NSArray *list) {
 
         NSLog(@"upload of %ld of %ld files completed\n", [list count], [urls count]);
+        [self.engine cleanUploads];
         [self.uploadProgress setHidden:YES];
+
+        self.engine.forceReload = YES; // we force the request reload as we just have added some images to album
         [self.engine sendAPI:@"my.photosOfAlbum" withTerm:self.selectedGallery onCompletion:^(NSArray *data) {
             
             [self stopBlackout];
@@ -583,21 +586,27 @@
 	[[self.loginPanel animator] setFrameOrigin:[self.loginPanel frame].origin];
 }
 
+- (void) instantBlackout
+{
+    if(!self.insideBlackout) {
+        self.forceBlackout = YES;
+        [self makeBlackout];
+    }
+}
+
 - (void) startBlackout
 {
-    if(!self.isWaitingBlackout) {
-        NSLog(@"START blackout [%d]", self.blackoutCount);
-        self.isWaitingBlackout = YES;
+    if(!self.insideBlackout) {
+        self.waitingBlackout = YES;
         [self performSelector:@selector(makeBlackout) withObject:nil afterDelay:0.5f]; // wait for 0.5 sec to avoid flickering
     }
 }
 
 - (void) makeBlackout
 {
-    NSLog(@"MAKE blackout [%d]", self.blackoutCount);
-    if(self.isWaitingBlackout && self.blackoutCount == 0) {
+    if(!self.insideBlackout && (self.waitingBlackout || self.forceBlackout)) {
         
-        self.blackoutCount ++;
+        self.insideBlackout = YES;
         CATransition *animation = [CATransition animation];
         [animation setType:kCATransitionFade];
         [[self.placeholder layer] addAnimation:animation forKey:@"layerAnimation"];
@@ -617,13 +626,12 @@
         
         [[self.blackoutView layer] setBackgroundFilters:[NSArray arrayWithObjects:exposureFilter, saturationFilter, blurFilter, nil]];
     }
-    self.isWaitingBlackout = NO;
+    self.waitingBlackout = self.forceBlackout = NO;
 }
 
 - (void) stopBlackout
 {
-    NSLog(@"STOP >>> blackout [%d]", self.blackoutCount);
-    if(self.blackoutCount == 1) {
+    if(self.insideBlackout) {
         CATransition *animation = [CATransition animation];
         [animation setType:kCATransitionFade];
         [[self.placeholder layer] addAnimation:animation forKey:@"layerAnimation"];
@@ -632,9 +640,7 @@
         self.blackoutView = nil;
     }
     
-    if(!self.isWaitingBlackout && self.blackoutCount > 0) self.blackoutCount --;
-    self.isWaitingBlackout = NO;
-    NSLog(@"STOP <<< blackout [%d]", self.blackoutCount);
+    self.waitingBlackout = self.forceBlackout = self.insideBlackout = NO;
 }
 
 @end

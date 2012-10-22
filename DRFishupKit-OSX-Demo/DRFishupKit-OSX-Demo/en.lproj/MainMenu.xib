@@ -1317,7 +1317,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSSplitView" id="551731999">
@@ -1337,7 +1337,6 @@
 													<int key="NSvFlags">4352</int>
 													<string key="NSFrameSize">{202, 481}</string>
 													<reference key="NSSuperview" ref="474451369"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="140689865"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
 													<string key="NSReuseIdentifierKey">_NS:13</string>
@@ -1452,7 +1451,6 @@
 											</array>
 											<string key="NSFrameSize">{200, 481}</string>
 											<reference key="NSSuperview" ref="262811715"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="816636513"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -1465,7 +1463,6 @@
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 											<reference key="NSSuperview" ref="262811715"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="230916406"/>
 											<string key="NSReuseIdentifierKey">_NS:15</string>
 											<reference key="NSTarget" ref="262811715"/>
@@ -1477,7 +1474,6 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrame">{{0, 466}, {200, 15}}</string>
 											<reference key="NSSuperview" ref="262811715"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="96924361"/>
 											<string key="NSReuseIdentifierKey">_NS:60</string>
 											<bool key="NSEnabled">YES</bool>
@@ -1489,7 +1485,6 @@
 									</array>
 									<string key="NSFrameSize">{200, 481}</string>
 									<reference key="NSSuperview" ref="551731999"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="474451369"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1504,7 +1499,6 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{201, 0}, {536, 481}}</string>
 									<reference key="NSSuperview" ref="551731999"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="716159991"/>
 									<bool key="NSViewIsLayerTreeHost">YES</bool>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -1514,7 +1508,6 @@
 							</array>
 							<string key="NSFrame">{{0, 32}, {737, 481}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="262811715"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1526,7 +1519,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{537, 9}, {180, 12}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1551,7 +1543,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 7}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="699520012"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:945</string>
@@ -1563,7 +1554,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{43, 9}, {471, 12}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="53727499"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1573,8 +1563,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{737, 513}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="551731999"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
@@ -1591,7 +1579,7 @@
 				<string key="NSClassName">NSFontManager</string>
 			</object>
 			<object class="IKImageBrowserView" id="433443442">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">18</int>
 				<set class="NSMutableSet" key="NSDragTypes">
 					<string>Apple PDF pasteboard type</string>
@@ -1753,8 +1741,6 @@
 					<string>NeXT TIFF v4.0 pasteboard type</string>
 				</set>
 				<string key="NSFrameSize">{384, 408}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 				<string key="NSReuseIdentifierKey">_NS:24</string>
 				<bool key="constrainsToOriginalSize">NO</bool>
@@ -1816,6 +1802,9 @@
 									<string key="NSColorName">textColor</string>
 									<reference key="NSColor" ref="351701329"/>
 								</object>
+								<array key="NSAllowedInputLocales">
+									<string>NSAllRomanInputSourcesLocaleIdentifier</string>
+								</array>
 							</object>
 						</object>
 						<object class="NSTextField" id="674603784">
@@ -1845,6 +1834,7 @@
 							<string key="NSFrame">{{325, 12}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="824680175"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="347246198">
@@ -4916,6 +4906,7 @@
 				<boolean value="NO" key="663.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="663.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="665.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="671.CustomClassName">NSSecureTextField</string>
 				<boolean value="NO" key="671.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="671.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="673.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4974,7 +4965,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">868</int>
+			<int key="maxID">878</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
