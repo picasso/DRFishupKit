@@ -16,6 +16,8 @@
 @property (assign) NSInteger perPage;
 @property (assign, readonly) NSInteger recCount;
 @property (assign, readonly) BOOL limitReached;
+@property (assign) BOOL forceReload;
+
 
 
 - (void) onNetworked:(DRVoidBlock)block;
@@ -38,6 +40,7 @@
 - (void) addUpload:(id)file;
 - (void) addUploads:(NSArray *)files;
 - (void) uploadToGallery:(NSString *)galleryId onCompletion:(DRArrayBlock)dataBlock;
+- (void) cleanUploads;
 
 - (void) sendAPI:(NSString *)api withId:(NSString *)stringId onCompletion:(DRDataBlock)dataBlock;
 - (void) sendAPI:(NSString *)api withExtras:(NSString *)extras onCompletion:(DRDataBlock)dataBlock;

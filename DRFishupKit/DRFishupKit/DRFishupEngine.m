@@ -37,7 +37,7 @@
 
 @implementation DRFishupEngine
 @synthesize token = _token, uploadGallery = _uploadGallery, page = _page, perPage = _perPage, waitingForToken = _waitingForTokens;
-@synthesize recCount = _recCount, limitReached = _limitReached;
+@synthesize recCount = _recCount, limitReached = _limitReached, forceReload = _forceReload;
 @synthesize networkedBlock = _networkedBlock, errorBlock = _errorBlock, progressBlock = _progressBlock, uploadBlock = _uploadBlock;
 @synthesize isNetworkActive = _isNetworkActive, helper = _helper, queue = _queue, queueSize = _queueSize;
 
@@ -51,6 +51,7 @@
         self.page = 1;
         self.perPage = kDRFishupRecordsPerPage;
         self.isNetworkActive = NO;
+        self.forceReload = NO;
         self.queue = [NSMutableArray array];
       
         [self onError:nil];
@@ -196,7 +197,8 @@
             self.errorBlock(error);
         }];
         
-        [self enqueueOperation:op];
+        [self enqueueOperation:op forceReload:self.forceReload];
+        self.forceReload = NO;
     }
 }
 
@@ -397,6 +399,11 @@
     }
 }
 
+- (void) cleanUploads
+{
+    [self.queue removeAllObjects];
+}
+
 // TODO: make clean queue after upload
 - (void) clean
 {
@@ -415,6 +422,7 @@
 
 - (void) calculateQueueSize
 {
+    self.queueSize = 0;
     for(DRUploadFile *file in self.queue)
         self.queueSize += file.filesize;
 }
