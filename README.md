@@ -1,4 +1,4 @@
-#DRFishupKit для Mac OSX и iOS
+# DRFishupKit для Mac OSX и iOS
 
 
 Framework DRFishupKit был создан для поддержки взаимодействия с сервисом [**Fishup**](http://http://www.fishup.ru) в приложениях для **Mac OSX** и **iOS** (то есть для iPhone и iPad). Framework написан на Objective-C - естественном языке программирования для Mac OSX. 
@@ -11,7 +11,7 @@ Framework DRFishupKit был создан для поддержки взаимо
 Для взаимодействия с Fishup используется **public API** сервиса, наиболее последнее описание которого можно скачать в [разделе для разработчиков](http://www.fishup.ru/developer/api). В качестве сетевой библиотеки используется framework [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit), созданный [Mugunth Kumar](http://blog.mugunthkumar.com). 
 
 ---
-###Licensing
+### Licensing
 
 DRFishupKit is licensed under MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,7 +33,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
-###Как подключить DRFishupKit к своему проекту?
+### Как подключить DRFishupKit к своему проекту?
 
 1. Добавьте проект DRFishupKit к вашему проекту;
 2. Добовьте `CFNetwork.Framework`, `SystemConfiguration.framework` и `Security.framework` в блок "Linked Frameworks and Libraries" для вашего проекта;
@@ -44,11 +44,11 @@ THE SOFTWARE.
 
 
 ---
-###Как использовать
+### Как использовать
 Подробнее читайте в файле [DRFishupKit.pages](https://github.com/picasso/DRFishupKit/blob/master/DRFishupKit.pages). Я предполагаю, что у всех, кто работает на Mac есть **Pages**. Ну а мне гораздо удобнее работать в нормальном текстовом редакторе, чем использовать специализированную разметку файлов.
 
 ---
-###TODO
+### TODO
 
 * Исправить загрузку параметров из ApiHelper для методов POST
 * Сделать метод для остановки всей очереди загрузки (cancel)
@@ -57,7 +57,7 @@ THE SOFTWARE.
 Не могу сказать, что я сделаю это в самом ближайшем будущем, но надолго планирую  не откладывать
 
 ---
-###Known Issues
+### Known Issues
 * При вызове через ApiHelper метода POST словарь не объединяется с передаваемыми параметрами
 * Не до конца проверен парсер WDDX при получении ошибок от загрузчика Fishup
 
